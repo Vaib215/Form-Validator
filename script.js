@@ -30,13 +30,17 @@ function checkEmail(input) {
 
 // Check required field
 function checkRequired(inputArr) {
+  let isRequired = false;
   inputArr.forEach(function(input) {
     if (input.value.trim() === "") {
       showError(input, `${getFieldName(input)} can't be empty.`);
+      isRequired = true;
     } else {
       showSuccess(input);
     }
   });
+
+  return isRequired;
 }
 
 // Get Field Name
@@ -72,12 +76,13 @@ function checkPasswordsMatch(input1, input2) {
 }
 
 // Event Listeners
-form.addEventListener("submit", e => {
+form.addEventListener('submit', e => {
   e.preventDefault();
 
-  checkRequired([username, email, password, password2]);
-  checkLength(username, 3, 15);
-  checkLength(password, 6, 25);
-  checkEmail(email);
-  checkPasswordsMatch(password, password2);
+  if (checkRequired([username, email, password, password2])) {
+    checkLength(username, 3, 15);
+    checkLength(password, 6, 25);
+    checkEmail(email);
+    checkPasswordsMatch(password, password2);
+  }
 });
