@@ -7,7 +7,7 @@ const password2 = document.getElementById("password2");
 // Show Input Error Message
 function showError(input, message) {
   const formControl = input.parentElement;
-  formControl.classList.add("error");
+  formControl.classList="form-control error";
   const small = formControl.querySelector("small");
   small.innerText = message;
 }
@@ -15,7 +15,7 @@ function showError(input, message) {
 // Show success outline
 function showSuccess(input) {
   const formControl = input.parentElement;
-  formControl.classList.add("success");
+  formControl.classList="form-control success";
 }
 
 // Check email address
