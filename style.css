@@ -34,9 +34,10 @@ body {
 
 .container {
   background-color: var(--clr-sec);
-  color: var(--clr-text);
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  color: var(--clr-text);
+  width: 400px;
 }
 
 h2 {
